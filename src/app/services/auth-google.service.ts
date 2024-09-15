@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { AuthConfig, OAuthEvent, OAuthService } from 'angular-oauth2-oidc';
 import { BehaviorSubject, Subject, takeUntil } from 'rxjs';
 import { UserProfile } from '../models/user-profile';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -26,7 +27,7 @@ export class AuthGoogleService implements OnDestroy {
     const authConfig: AuthConfig = {
       issuer: 'https://accounts.google.com',
       strictDiscoveryDocumentValidation: false,
-      clientId: process.env['googleClientId'],
+      clientId: environment.googleClientId,
       redirectUri: window.location.origin + '/dashboard',
       scope: 'openid profile email',
     };

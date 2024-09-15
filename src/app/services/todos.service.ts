@@ -3,13 +3,14 @@ import { inject, Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { TodoList } from '../models/todo-list';
 import { Todo } from '../models/todo';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TodosService {
 
-  private apiUrl: string = process.env['apiUrl'] || '';
+  private apiUrl: string = environment.apiUrl;
 
   private http = inject(HttpClient);
 
