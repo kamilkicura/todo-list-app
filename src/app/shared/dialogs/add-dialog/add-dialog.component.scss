@@ -15,34 +15,5 @@ section {
         display: flex;
         flex-direction: column;
         row-gap: 10px;
-        
-        .datetime-picker {
-            width: 100%;
-            display: flex;
-            column-gap: 5px;
-
-            .date-input, .time-input {
-                width: auto;
-                display: flex;
-                height: 56px;
-                padding-inline: 16px;
-                color: #666666;
-                border: 1px solid #b0b0b0;
-                font-size: 14px;
-                color-scheme: dark;
-                border-radius: 4px;
-                background: transparent;
-            }
-    
-            .invalid {
-                border-color: rgb(244,67,54);
-            }
-            ::-webkit-calendar-picker-indicator {
-                filter: invert(1);
-                cursor: pointer;
-                font-size: 24px;
-                opacity: 0.7;
-            }
-        }
     }
 }
