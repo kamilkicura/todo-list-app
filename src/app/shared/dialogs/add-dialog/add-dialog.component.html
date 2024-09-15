@@ -1,0 +1,75 @@
+<section>
+    <h2 mat-dialog-title>{{ data.title | uppercase}}</h2>
+
+    <mat-dialog-content>
+
+        <form [formGroup]="dialogForm">
+
+            @for (value of data.controls; track value) {
+
+                @switch (value) {
+                    @case ('title') {
+                        <mat-form-field appearance="outline">
+                            <input 
+                                matInput 
+                                cdkFocusInitial 
+                                formControlName="title" 
+                                placeholder="Title" 
+                                aria-label="Input for title"
+                            >
+                        </mat-form-field>
+                    }
+
+                    @case ('text') {
+                        <mat-form-field appearance="outline">
+                            <textarea 
+                                matInput 
+                                formControlName="text" 
+                                placeholder="Text" 
+                                aria-label="Input for text"
+                            ></textarea>
+                        </mat-form-field>
+                    }
+
+                    @case ('deadlineDate') {
+                        
+                        <div class="datetime-picker">
+                            <input 
+                              class="date-input" 
+                              type="date" 
+                              [formControl]="dateControl"
+                              placeholder="Select Date"
+                              [ngClass]="{'invalid': dateControl.invalid && dateControl.touched}"
+                            />
+                            <input 
+                              class="time-input"
+                              type="time" 
+                              [formControl]="timeControl"
+                              placeholder="Select Time"
+                              [ngClass]="{'invalid': timeControl.invalid && timeControl.touched}"
+                            />
+                        </div>
+                    }
+                }
+            }
+        </form>
+
+    </mat-dialog-content>
+
+    <mat-dialog-actions align="end">
+        <button 
+            mat-button 
+            (click)="onClick('exit')" 
+            aria-label="Button for leave dialog"
+        >Cancel</button>
+
+        <button 
+            class="add-task-button" 
+            mat-flat-button color="primary" 
+            [disabled]="!dialogForm.valid" 
+            (click)="onClick()"
+            aria-label="Add Button"
+        >+ Add</button>
+
+    </mat-dialog-actions>
+</section>

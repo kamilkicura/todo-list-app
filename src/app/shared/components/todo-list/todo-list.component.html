@@ -1,0 +1,46 @@
+<section class="list-container">
+    <header>
+        <section class="top-header-section">
+            <h2> {{ list.title | uppercase }} </h2>
+
+            <div class="add-container">
+                <button class="add-todo-button" mat-flat-button color="primary" aria-label="Add Todo Button" (click)="addNewTodo()">
+                    + Add Todo
+                </button>
+            </div>
+        </section>
+
+        <section [formGroup]="formFilter" class="todo-list-menu-container">
+
+            <div class="todo-search-container">
+                <mat-form-field>
+                  <input matInput placeholder="Search todos"formControlName="searchFilter" aria-label="Input for search">
+                </mat-form-field>
+            </div>
+
+            <div class="todo-state-selector-container">
+                <mat-form-field>      
+                    <mat-select formControlName="statusFilter" aria-label="Select for filter state">
+                        <mat-option value="all">All</mat-option>
+                        <mat-option value="active">Active</mat-option>
+                        <mat-option value="completed">Completed</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+
+        </section>
+    </header>
+
+    <main>
+        @if(filteredTodos) {
+            
+            @for (todo of filteredTodos; track todo.id) {
+                
+                @if(todo) {
+                    <app-todo [todo]="todo" (isEdited)="updateTodos($event)" (isRemoved)="removeTodoFromList($event)"></app-todo>
+                }
+            }
+        }
+    </main>
+    
+</section>

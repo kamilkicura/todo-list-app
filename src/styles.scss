@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+@import './styles/custom-theme.scss';
+
+
+:root {
+    --primary-color: rgba(56, 60, 69, 1);
+    --primary-darkest-color: rgba(23, 26, 31, 1);
+    --secondary-color: rgba(248, 248, 248, 1);
+    --secondary-darker-color: rgba(248, 248, 248, 0.5);
+    --tertiary-color: rgba(242, 78, 30, 1);
+
+    --box-shadow-default: 0px 4px 8px rgba(0, 0, 0, 0.25);
+
+    --large-text-size: 20px;
+    --default-text-size: 16px;
+    --medium-plus-text-size: 15px;
+    --medium-text-size: 14px;
+    --small-plus-text-size: 12px;
+    --small-text-size: 10px;
+    --extra-small-text-size: 8px;    
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}

@@ -1,0 +1,49 @@
+.todo-container {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    background-color: var(--secondary-color);
+    border-radius: 8px;
+    width: 100%;
+    height: auto;
+    padding: 5px;
+    box-sizing: border-box;
+    overflow: hidden;
+
+    header {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+
+        h3 {
+            display: flex;
+            font-size: var(--medium-text-size);
+            margin-block: auto;
+            font-weight: 500;
+        }
+    }
+
+    main {
+        display: flex;
+        width: 100%;
+        padding-inline: 10px;
+        overflow: hidden;
+        box-sizing: border-box;
+        p {
+            display: flex;
+            width: 100%;
+            word-break: break-all;
+        }
+    }
+
+    footer {
+        display: flex;
+        width: 100%;
+        justify-content: flex-end;
+        align-self: end;
+        color: var(--tertiary-color);
+        column-gap: 4px;
+        padding-inline: 10px;
+        box-sizing: border-box;
+    }
+}

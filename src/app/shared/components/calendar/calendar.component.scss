@@ -1,0 +1,42 @@
+section {
+    display: flex;
+    flex-direction: row;
+    column-gap: 16px;
+
+    .calendar-icon-box {
+        display: flex;
+        width: auto;
+        padding: 8px;
+        margin: auto 0;
+        background-color: var(--primary-color);
+        border-radius: 8px;
+
+        mat-icon {
+            display: flex;
+            margin: auto;
+            color: var(--secondary-color);
+
+        }
+    }
+
+    .calendar-info-box {
+        display: flex;
+        flex-direction: column;
+
+        .calendar-day, .calendar-date {
+            display: flex;
+        }
+
+        .calendar-day {
+            font-size: var(--medium-plus-text-size);
+            color: var(--primary-darkest-color)
+        }
+
+        .calendar-date {
+            font-weight: 500;
+            font-size: var(--medium-text-size);
+            color: var(--secondary-color);
+        }
+
+    }
+}

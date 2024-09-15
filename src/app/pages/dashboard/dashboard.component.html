@@ -1,0 +1,43 @@
+<div class="dashboard-container">
+    
+    <header>
+        <app-top-navigation></app-top-navigation>
+    </header>
+
+    <main>
+
+        @if(profile) {
+
+            <div class="add-container">
+                <button class="add-list-button" aria-label="Add Todo List Button" mat-flat-button color="primary" (click)="addNewList()">
+                    + Add Todo List
+                </button>
+            </div>
+
+            @if (todoList) {
+
+                <div class="lists-container">
+            
+                    @for (list of todoList; track $index) {
+                    
+                        @if (list) {
+                            <div class="list-container">
+                                <app-todo-list [list] ="list"></app-todo-list>
+                            </div>
+                        }
+                    }
+                
+                </div>
+            
+            }
+
+        } @else {
+
+            <div class="loading-container">
+                <mat-spinner aria-label="Loading Spinner"></mat-spinner>
+            </div>
+        }
+
+    </main>
+
+</div>

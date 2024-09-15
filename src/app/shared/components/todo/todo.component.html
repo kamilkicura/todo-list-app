@@ -1,0 +1,26 @@
+<section class="todo-container">
+    <header>
+        <mat-checkbox color="primary" [formControl]="checkboxValue" aria-label="Checkbox for switch between active and completed task"/>
+        <h3>{{ todo.title | uppercase }}</h3>
+        <div class="buttons-container">
+            <!--<button mat-button aria-label="Edit task button" (click)="editTodo()">Edit</button>
+            <button mat-button aria-label="Delete task button" (click)="deleteTodo()">Delete</button>-->
+            <button mat-icon-button aria-label="Edit task button" color="primary" (click)="editTodo()">
+                <mat-icon>edit</mat-icon>
+            </button>
+            <button mat-icon-button aria-label="Delete task button" color="primary" (click)="deleteTodo()">
+                <mat-icon>close</mat-icon>
+            </button>
+        </div>
+    </header>
+    <main>
+        <p>{{ todo.text | sentenceCase }}</p>
+    </main>
+    <footer>
+        <mat-icon aria-hidden="false" aria-label="Deadline Calendar" fontIcon="date_range"></mat-icon>
+        <div class="calendar-date">
+            {{ todo.deadlineDate | date: 'dd/MM/yyyy  HH:mm' }}    
+        </div>
+    </footer>
+
+</section>

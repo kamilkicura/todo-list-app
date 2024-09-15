@@ -1,0 +1,12 @@
+section {
+    display: flex;
+    cursor: pointer;
+    border-radius: 8px;
+    span {
+        display: flex;
+        margin-block: auto;
+        font-size: var(--default-text-size);
+        color: var(--primary-color);
+        font-weight: 500;
+    }
+}

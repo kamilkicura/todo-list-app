@@ -1,0 +1,34 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    margin: auto 0;
+    padding: 0 5%;
+    width: 100%;
+    height: 80px;
+    box-sizing: border-box;
+    box-shadow: var(--box-shadow-default);
+    background-color: var(--secondary-darker-color);
+
+    app-logo, app-calendar, app-menu {
+        display: flex;
+        width: auto;
+        margin: auto 0;
+    }
+
+    .right-side-container {
+        display: flex;
+        column-gap: 40px;
+    }
+}
+
+@media (max-width: 991px) {
+    nav {
+        padding: 0 2%;
+    }
+}
+
+@media (max-width: 480px) {
+    app-calendar {
+        display: none!important;
+    }
+}

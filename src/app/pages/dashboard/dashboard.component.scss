@@ -1,0 +1,79 @@
+@mixin background-image($img-url) {
+    background: url($img-url) center/cover no-repeat;
+}
+  
+.dashboard-container {
+    @include background-image('../../../assets/images/background.png');
+    width: 100vw;
+    min-height: 100vh;
+
+    main {
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        width: 90%;
+        margin: 5% auto;
+        row-gap: 10px;
+        height: 100%;
+        padding-bottom: 5%;
+
+        .add-container {
+            display: flex;
+            width: auto;
+
+            ::ng-deep .add-list-button {
+                .mat-mdc-unelevated-button {
+                    border-radius: 4px!important;
+                }
+            }
+        }
+
+        .lists-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(30%, 1fr)); 
+            gap: 10px;
+            width: 100%;
+            box-sizing: border-box;
+
+            .lists-container {
+                display: flex;
+                width: 100%;
+            }
+        }
+    }
+
+    .loading-container {
+        display: flex;
+        width: 50px;
+        height: 50px;
+        margin: auto;
+
+        .mat-mdc-progress-spinner { 
+            --mdc-circular-progress-active-indicator-color: rgba(248, 248, 248, 1);; 
+        }
+    }
+}
+
+
+@media (max-width: 1190px) {
+    .lists-container {
+        grid-template-columns: repeat(2, 1fr)!important;
+    }
+}
+
+@media (max-width: 991px) {
+    main {
+        width: 96%!important;
+
+        .lists-container {
+            column-gap: 2%!important;
+            row-gap: 2%!important;
+          }
+    }
+}
+
+@media (max-width: 740px) {
+    .lists-container {
+      grid-template-columns: 1fr!important;
+    }
+}

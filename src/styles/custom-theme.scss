@@ -1,0 +1,42 @@
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$custom-primary-palette: (
+    50: #e7e8e9,
+    100: #c3c5c7,
+    200: #9c9ea2,
+    300: #74777d,
+    400: #565961,
+    500: #383c45,
+    600: #32363e,
+    700: #2b2e36,
+    800: #24272e,
+    900: #171a1f,
+    contrast: (
+        50: #383c45,
+        100: #383c45,
+        200: #383c45,
+        300: #f8f8f8,
+        400: #f8f8f8,
+        500: #f8f8f8,
+        600: #f8f8f8,
+    )
+);
+
+$custom-primary: mat.m2-define-palette($custom-primary-palette);
+$custom-accent: mat.m2-define-palette(mat.$m2-indigo-palette, A200, A100, A400);
+$custom-warn: mat.m2-define-palette(mat.$m2-red-palette);
+
+$custom-theme: mat.m2-define-light-theme(
+    (
+        color: (
+            primary: $custom-primary,
+            accent: $custom-accent,
+            warn: $custom-warn,
+        ),
+    )
+);
+
+@include mat.all-component-themes($custom-theme);
+

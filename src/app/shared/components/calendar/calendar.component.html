@@ -1,0 +1,15 @@
+<section>
+    <div class="calendar-icon-box">
+        <mat-icon aria-hidden="false" aria-label="Calendar Icon" fontIcon="date_range"></mat-icon>
+    </div>
+    
+    <div class="calendar-info-box">
+        <div class="calendar-day">
+            {{ currentDate | date:'EEEE' }}
+        </div>
+        
+        <div class="calendar-date">
+            {{ currentDate | date:'dd/MM/yyyy' }}    
+        </div>
+    </div>
+</section>

@@ -1,0 +1,24 @@
+@mixin background-image($img-url) {
+    background: url($img-url) center/cover no-repeat;
+}
+  
+.login-container {
+    @include background-image('../../../assets/images/background.png');
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+
+    .card-container {
+        display: flex;
+        margin: auto;
+        box-shadow: var(--box-shadow-def);
+        border-radius: 8px;
+        padding: 5%;
+        background-color: var(--secondary-darker-color);
+
+        button {
+            margin: auto;
+        }
+
+    }
+}
